@@ -1,0 +1,6 @@
+<% case custom_field.class.name
+   when 'UserCustomField' %>
+  <p><%= form.check_box(:significant, :label => l(:label_on_registration)) %></p>
+<% when 'VersionCustomField' %>
+  <p><%= form.check_box(:significant, :label => l(:label_shown_on_project_page)) %></p>
+<% end %>
