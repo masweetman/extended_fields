@@ -132,9 +132,9 @@ end
 
 Redmine::Plugin.register :extended_fields do
     name 'Extended fields'
-    author 'Andriy Lesyuk'
+    author 'Mike Sweetman'
     author_url 'http://www.andriylesyuk.com'
     description 'Adds new custom field types, improves listings etc.'
-    url 'http://projects.andriylesyuk.com/projects/extended-fields'
-    version '0.2.4'
+    url 'https://github.com/masweetman/extended_fields.git'
+    version '1.0.0'
 end
