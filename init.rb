@@ -81,15 +81,6 @@ Rails.configuration.to_prepare do
             CustomField.send(:include, ExtendedCustomFieldPatch)
         end
     end
-    begin
-        unless CustomFieldValue.included_modules.include?(ExtendedCustomFieldValuePatch)
-            CustomFieldValue.send(:include, ExtendedCustomFieldValuePatch)
-        end
-    rescue NameError
-    end
-    unless CustomValue.included_modules.include?(ExtendedCustomValuePatch)
-        CustomValue.send(:include, ExtendedCustomValuePatch)
-    end
     if defined?(Redmine::CustomFieldFormat)
         unless Query.included_modules.include?(ExtendedCustomQueryPatch)
             Query.send(:include, ExtendedCustomQueryPatch)
