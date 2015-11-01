@@ -38,28 +38,28 @@ Rails.configuration.to_prepare do
         end
     end
 
-    unless AdminController.included_modules.include?(ExtendedAdminControllerPatch)
-        AdminController.send(:include, ExtendedAdminControllerPatch)
-    end
-    unless UsersController.included_modules.include?(ExtendedUsersControllerPatch)
-        UsersController.send(:include, ExtendedUsersControllerPatch)
-    end
-    unless IssuesController.included_modules.include?(ExtendedIssuesControllerPatch)
-        IssuesController.send(:include, ExtendedIssuesControllerPatch)
-    end
+    #unless AdminController.included_modules.include?(ExtendedAdminControllerPatch)
+    #    AdminController.send(:include, ExtendedAdminControllerPatch)
+    #end
+    #unless UsersController.included_modules.include?(ExtendedUsersControllerPatch)
+    #    UsersController.send(:include, ExtendedUsersControllerPatch)
+    #end
+    #unless IssuesController.included_modules.include?(ExtendedIssuesControllerPatch)
+    #    IssuesController.send(:include, ExtendedIssuesControllerPatch)
+    #end
     #if ActiveRecord::Base.connection.adapter_name =~ %r{mysql}i
     #    unless CalendarsController.included_modules.include?(ExtendedCalendarsControllerPatch)
     #        CalendarsController.send(:include, ExtendedCalendarsControllerPatch)
     #    end
     #end
-    if Redmine::VERSION::MAJOR == 2 && Redmine::VERSION::MINOR < 5
-        unless ApplicationHelper.included_modules.include?(ExtendedApplicationHelperPatch)
-            ApplicationHelper.send(:include, ExtendedApplicationHelperPatch)
-        end
-    end
-    unless QueriesHelper.included_modules.include?(ExtendedQueriesHelperPatch)
-        QueriesHelper.send(:include, ExtendedQueriesHelperPatch)
-    end
+    #if Redmine::VERSION::MAJOR == 2 && Redmine::VERSION::MINOR < 5
+    #    unless ApplicationHelper.included_modules.include?(ExtendedApplicationHelperPatch)
+    #        ApplicationHelper.send(:include, ExtendedApplicationHelperPatch)
+    #    end
+    #end
+    #unless QueriesHelper.included_modules.include?(ExtendedQueriesHelperPatch)
+    #    QueriesHelper.send(:include, ExtendedQueriesHelperPatch)
+    #end
     unless CustomFieldsHelper.included_modules.include?(ExtendedFieldsHelperPatch)
         CustomFieldsHelper.send(:include, ExtendedFieldsHelperPatch)
     end
@@ -68,17 +68,17 @@ Rails.configuration.to_prepare do
             CustomField.send(:include, ExtendedCustomFieldPatch)
         end
     end
-    if defined?(Redmine::CustomFieldFormat)
-        unless Query.included_modules.include?(ExtendedCustomQueryPatch)
-            Query.send(:include, ExtendedCustomQueryPatch)
-        end
-    end
-    unless Project.included_modules.include?(ExtendedProjectPatch)
-        Project.send(:include, ExtendedProjectPatch)
-    end
-    unless User.included_modules.include?(ExtendedUserPatch)
-        User.send(:include, ExtendedUserPatch)
-    end
+    #if defined?(Redmine::CustomFieldFormat)
+    #    unless Query.included_modules.include?(ExtendedCustomQueryPatch)
+    #        Query.send(:include, ExtendedCustomQueryPatch)
+    #    end
+    #end
+    #unless Project.included_modules.include?(ExtendedProjectPatch)
+    #    Project.send(:include, ExtendedProjectPatch)
+    #end
+    #unless User.included_modules.include?(ExtendedUserPatch)
+    #    User.send(:include, ExtendedUserPatch)
+    #end
 
     unless AdminController.included_modules.include?(CustomFieldsHelper)
         AdminController.send(:helper, :custom_fields)
