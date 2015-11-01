@@ -22,19 +22,6 @@ if defined?(Redmine::CustomFieldFormat)
     end
 end
 
-issue_query = (IssueQuery rescue Query)
-
-issue_query.add_available_column(ExtendedQueryColumn.new(:notes,
-                                                         :value => lambda { |issue| issue.journals.select{ |journal| journal.notes.present? }.size }))
-
-issue_query.add_available_column(ExtendedQueryColumn.new(:changes,
-                                                         :caption => :label_change_plural,
-                                                         :value => lambda { |issue| issue.journals.select{ |journal| journal.details.any? }.size }))
-
-issue_query.add_available_column(ExtendedQueryColumn.new(:watchers,
-                                                         :caption => :label_issue_watchers,
-                                                         :value => lambda { |issue| issue.watchers.size }))
-
 Rails.configuration.to_prepare do
 
     unless String.method_defined?(:html_safe)
