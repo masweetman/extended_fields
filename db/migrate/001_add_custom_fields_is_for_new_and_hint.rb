@@ -1,4 +1,4 @@
-class AddCustomFieldsIsForNewAndHint < ActiveRecord::Migration
+class AddCustomFieldsIsForNewAndHint < ActiveRecord::Migration[4.2]
 
     def self.up
         add_column :custom_fields, :is_for_new, :boolean, :default => true, :null => false

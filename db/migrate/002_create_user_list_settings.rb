@@ -1,4 +1,4 @@
-class CreateUserListSettings < ActiveRecord::Migration
+class CreateUserListSettings < ActiveRecord::Migration[4.2]
 
     def self.up
         create_table :user_list_settings do |t|

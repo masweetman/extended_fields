@@ -1,4 +1,4 @@
-class RenameCustomFieldsSignificant < ActiveRecord::Migration
+class RenameCustomFieldsSignificant < ActiveRecord::Migration[4.2]
 
     def self.up
         rename_column :custom_fields, :is_for_new, :significant
